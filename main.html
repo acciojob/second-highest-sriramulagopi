@@ -13,19 +13,19 @@
 			}
 			let lar = -11111111111111;
 			let ind = 0;
-			let sum2 = arr[0]*arr.length;
+			let sum2 = parseInt(arr[0])*arr.length;
 			let sum1 = 0;
 			for (let i=0;i<arr.length;i++){
 				sum1+=parseInt(arr[i]);
-				if (arr[i]>lar){
-					lar=arr[i];
+				if (parseInt(arr[i])>lar){
+					lar=parseInt(arr[i]);
 					ind=i;
 				}
 			}
 			let lar2 = -11111111111111;
 			for (let i=0;i<arr.length;i++){
-				if (arr[i]>lar2 && i!=ind){
-					lar2=arr[i];
+				if (parseInt(arr[i])>lar2 && i!=ind){
+					lar2=parseInt(arr[i]);
 				}
 			}
 			if(sum1===sum2){
@@ -33,6 +33,7 @@
 			}
 			return lar2;
 		}	
+		
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
