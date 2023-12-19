@@ -8,36 +8,33 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			let sum1 = 0;
-			arr.forEach((a)=>{
-				sum1+=a;
-			});
-			let sum2 = arr[0]*arr.length;
-			if (sum1===sum2){
-				return arr[0];
-			}
 			if (arr.length==0 || arr.length==1){
-				return undefined;
+				return '-Infinity';
 			}
-			
-			let lar = -11111111111111111;
+			let lar = -11111111111111;
 			let ind = 0;
+			let sum2 = arr[0]*arr.length;
+			let sum1 = 0;
 			for (let i=0;i<arr.length;i++){
+				sum1+=parseInt(arr[i]);
 				if (arr[i]>lar){
 					lar=arr[i];
 					ind=i;
 				}
 			}
-			let lar2 = -11111111111111111;
+			let lar2 = -11111111111111;
 			for (let i=0;i<arr.length;i++){
 				if (arr[i]>lar2 && i!=ind){
 					lar2=arr[i];
 				}
 			}
+			if(sum1===sum2){
+				return '-Infinity';
+			}
 			return lar2;
 		}	
 		function Main() {
-			// var n = prompt("Enter the number of elements");
+			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
