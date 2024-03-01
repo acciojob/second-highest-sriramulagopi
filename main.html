@@ -9,7 +9,7 @@
 	<script>
 		function secondHighest(arr) {
             if(arr.length===1 || arr.length===0){
-                return '-Infinity';
+                return '\'-Infinity\'';
             }
             let value = arr[0];
             let count = 0;
@@ -19,7 +19,7 @@
                 }
             });
             if(count===arr.length){
-                return '-Infinity';
+                return '\'-Infinity\'';
             }
             arr.sort((a,b)=>a-b);
             return arr[arr.length-2];
